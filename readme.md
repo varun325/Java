@@ -101,7 +101,23 @@
             ```
         - Spring handled the creation of the object for you, i.e Inversion of control in the first line.
         - Spring also handled the dependency injection for you by passing the fortuneService object into the constructor using a constructor injection.
-    - ## Setter injection
+    - ## Steps for Setter injection
         - Create setter methods in your class for the injections.
         - Configure the dependency injection in Spring config file
-        
+        - > For the below xml code, the spring will create the below java code in the backend for you
+
+        - ```xml
+             <bean id="myFortune"
+            class="com.varun.springdemo.HappyFortuneService">
+            <!-- set up the constructor injection -->
+            </bean>
+            <bean id="myCricketCoach"
+                class="com.varun.springdemo.BaseBallCoach" >
+                <property name="fortuneService" ref="myFortune"><property>
+            </bean>
+            ```
+        - ```java
+            FortuneService fortuneService = new HappyFortuneService();
+            Coach coach = new BaseBallCoach();
+            coach.setFortuneService(fortuneService)
+            ```
