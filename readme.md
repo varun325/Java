@@ -101,3 +101,7 @@
             ```
         - Spring handled the creation of the object for you, i.e Inversion of control in the first line.
         - Spring also handled the dependency injection for you by passing the fortuneService object into the constructor using a constructor injection.
+    - ## Setter injection
+        - Create setter methods in your class for the injections.
+        - Configure the dependency injection in Spring config file
+        
