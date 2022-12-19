@@ -23,6 +23,10 @@
 		class="com.varun.springdemo.CricketCoach">
 		<!-- Set up setter injection -->
 		<property name="fortuneService" ref="myFortune"></property>
+		
+		<!-- inject literal value -->
+		<property name="email" value="abc@123.com"></property>
+		<property name="team" value="Mumbai Indians"></property>
 	</bean>
 	    
 	<bean id="myLoggerConfig" class="com.varun.springdemo.MyLoggerConfig" init-method="initLogger">

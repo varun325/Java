@@ -74,7 +74,7 @@
 
     - Here, the xml file can act as a configuration file for us and behind the scenes, Spring will do the type casting for us.
 
-- ## Main file and using context for invresion of control and dependency injection
+- ## Main file and using context for inversion of control and dependency injection
 
     - ```java
 
@@ -151,3 +151,22 @@
             Coach coach = new BaseBallCoach();
             coach.setFortuneService(fortuneService)
             ```
+    - ## Injecting literal values
+        - Create a setter method in your class for injections.
+        - Configure the injections in Spring config file.
+        - > For the below xml code, the spring will create the below java code in the backend for you
+
+        - ```xml
+            <bean id="myCricketCoach"
+                class="com.varun.springdemo.BaseBallCoach" >
+                <property name="email" value="abc@123.com"></property>
+                <property name="team" value="Mumbai Indians"></property>
+            </bean>
+            ```
+        - ```java
+            CricketCoach coach = new CricketCoach();
+            coach.setEmail("abc@123.com");
+            coach.setTeam("Mumbai Indians");
+            ```
+        - > Note: We can't use the Coach interface referance for casting here because Coach class doesn't have the specific getter and setter for email and team property.
+    
