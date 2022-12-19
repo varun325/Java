@@ -14,7 +14,7 @@
     	</bean>
     
     <bean id="myCoach"
-    	class="com.varun.springdemo.BaseBallCoach" >
+    	class="com.varun.springdemo.TrackCoach" >
   	    <constructor-arg ref="myFortune"></constructor-arg>
     </bean>
 	    
