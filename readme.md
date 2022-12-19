@@ -170,3 +170,27 @@
             ```
         - > Note: We can't use the Coach interface referance for casting here because Coach class doesn't have the specific getter and setter for email and team property.
     
+
+- ## Using an external properties file
+    - While having literal injections in the application context is fine, it's not really good to add a lot of hard coded values in the application context
+    - So, instead we can use a properties file that can hold all the properties.
+        - Create the properties file {.properties extension} -> In the same path as applicationContext.xml
+            - ```
+                foo.email="abc@123.com"
+                foo.team="Mumbai Indians"
+                ```
+        - Lead the values in the spring config file
+            - ```xml
+                <!-- Load the properties file -->
+	            <context:property-placeholder location="classpath:sport.properties"/>
+                ```
+        - Reference the values from the properties file.
+            - ```xml
+                <bean id="myCricketCoach" class="com.varun.springdemo.CricketCoach">
+                <!-- inject literal value -->
+                <property name="email" value="${foo.email}"></property>
+                <property name="team" value="${foo.team}"></property>
+	            </bean>
+                ```
+- 
+    
